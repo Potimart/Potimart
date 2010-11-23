@@ -1,0 +1,21 @@
+<h1>Sélection de la commune</h1>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Nom local</th>
+    <th>Indicateurs</th>
+  </tr>
+
+  <% @insee_communes.each do |insee_commune| %>
+    <tr>
+      <td><%=h insee_commune.name %></td>
+      <td><%=h insee_commune.namelc %></td>
+      <td>
+        <%if !insee_commune.indicators.empty?%>
+          <%= link_to 'Voir', insee_commune_insee_commune_indicators_path(insee_commune) %>
+        <%end%>
+      </td>
+    </tr>
+  <% end %>
+</table>

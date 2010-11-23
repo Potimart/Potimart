@@ -1,0 +1,5 @@
+Autotest.add_hook :initialize do |at|
+  %w{.git log tmp}.each do |exception|
+    at.add_exception(exception)
+  end
+end

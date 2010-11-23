@@ -1,0 +1,3 @@
+class Geocode < ChouetteActiveRecord
+
+end

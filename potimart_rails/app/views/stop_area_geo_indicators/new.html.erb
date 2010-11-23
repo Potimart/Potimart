@@ -1,0 +1,26 @@
+<h1>Nouvel indicateur</h1>
+
+<% form_for([@line, @route, @stop_area_geo, @stop_area_geo_indicator]) do |f| %>
+  <%= f.hidden_field :stop_area_geo_id %>
+  <p>
+    <%= f.label :name, 'Nom' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :value, 'Valeur' %><br />
+    <%= f.text_field :value %>
+  </p>
+  <p>
+    <%= f.label :start_date, 'Date de début' %><br />
+    <%= f.date_select :start_date, :order =>[:day, :month, :year] %>
+  </p>
+  <p>
+    <%= f.label :end_date, 'Date de fin' %><br />
+    <%= f.date_select :end_date, :order =>[:day, :month, :year] %>
+  </p>
+  <p>
+    <%= f.submit 'Créer' %>
+  </p>
+<% end %>
+
+<%= link_to 'Retour', line_route_stop_area_geo_stop_area_geo_indicators_path(@line, @route, @stop_area_geo) %>

@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+
+$: << File.join(File.dirname(__FILE__), "lib")
+
+require 'ruby_chouette'
+require 'chouette/geocoder'
+
+include Chouette::Geocoder
+
+puts "Loading IDF geocoding data ..."
+puts Benchmark.measure {
+  Geocoding.default_location_index = LocationIndex.from_database
+}
+
+puts Geocoding.default_location_index.inspect
+
+def input_line
+  print "search: "
+  $stdin.readline.strip
+end
+
+while (search = input_line) != 'quit' do
+  GC.disable
+  geocoding = Geocoding.new(search, :timeout => 0.4)
+  puts "Phonetics: #{geocoding.input_phonetics.join(',')}"
+  puts "Street number: #{geocoding.street_number}" if geocoding.street_number
+
+  puts Benchmark.measure { geocoding.score_board }
+
+  geocoding.score_board.first(10).each do |scoring|
+    puts "#{scoring} (#{scoring.location.reference(geocoding).to_lat_lng})"
+  end
+  puts "Suggestions: #{geocoding.suggestions.join(', ')}"
+  puts "#{geocoding.score_board.size} found"
+  GC.enable
+  GC.start
+end

@@ -1,0 +1,21 @@
+<h1>Visualisation de la ligne <%= @line.name %></h1>
+<p>
+  <b>Nom:</b>
+  <%=h @line_indicator.name %>
+</p>
+<p>
+  <b>Valeur:</b>
+  <%=h @line_indicator.value %>
+</p>
+<p>
+  <b>Date de début:</b>
+  <%=l @line_indicator.start_date %>
+</p>
+<p>
+  <b>Date de fin:</b>
+  <%=l @line_indicator.end_date %>
+</p>
+
+
+<%= link_to 'Editer', edit_line_line_indicator_path(@line, @line_indicator) %> |
+<%= link_to 'Retour', line_line_indicators_path %>

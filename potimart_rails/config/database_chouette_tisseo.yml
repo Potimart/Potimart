@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  database: tisseo_v14
+  username: chouette
+  schema_search_path: chouette, potimart, public
+  template: template_1
+
+test:
+  adapter: postgresql
+  database: tisseo_v14
+  username: chouette
+  schema_search_path: chouette, potimart, public
+  template: template_1
+
+production:
+  adapter: postgresql
+  database: tisseo_v14
+  username: chouette
+  schema_search_path: chouette, potimart, public

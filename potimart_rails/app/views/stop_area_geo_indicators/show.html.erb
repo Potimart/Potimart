@@ -1,0 +1,20 @@
+<h1>Visualisation d'un indicateur</h1>
+<p>
+  <b>Nom:</b>
+  <%=h @stop_area_geo_indicator.name %>
+</p>
+<p>
+  <b>Valeur:</b>
+  <%=h @stop_area_geo_indicator.value %>
+</p>
+<p>
+  <b>Date de début:</b>
+  <%=l @stop_area_geo_indicator.start_date %>
+</p>
+<p>
+  <b>Date de fin:</b>
+  <%=l @stop_area_geo_indicator.end_date %>
+</p>
+
+<%= link_to 'Editer', edit_line_route_stop_area_geo_stop_area_geo_indicator_path(@line, @route, @stop_area_geo, @stop_area_geo_indicator) %> |
+<%= link_to 'Retour', line_route_stop_area_geo_stop_area_geo_indicators_path() %>

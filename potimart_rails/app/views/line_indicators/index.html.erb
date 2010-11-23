@@ -1,0 +1,21 @@
+<h1>Indicateurs de la ligne <%=  @line.name %></h1>
+
+<%= link_to 'Ajouter un indicateur', new_line_line_indicator_path(@line) %>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Indicateurs</th>
+    <th>Edition</th>
+    <th>Suppression</th>
+  </tr>
+
+  <% @line_indicators.each do |line_indicator| %>
+    <tr>
+      <td><%=h line_indicator.name %></td>
+      <td><%=h line_indicator.value %></td>
+      <td><%= link_to 'Editer', edit_line_line_indicator_path(@line, line_indicator) %></td>
+      <td><%= link_to 'Supprimer', line_line_indicator_path(@line, line_indicator), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

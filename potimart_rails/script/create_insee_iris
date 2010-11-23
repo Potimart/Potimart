@@ -1,0 +1,3 @@
+#!/bin/sh
+PGCLIENTENCODING=iso-8859-1 ogr2ogr -update -overwrite -t_srs "EPSG:4326" -skipfailures -f "PostgreSQL" "PG:host=localhost user=luc dbname=potimart password=monalisa" db/iris/91/CARTO/IRIS91.MIF -lco GEOMETRY_NAME=the_geom -nln insee_iris iris91
+PGCLIENTENCODING=iso-8859-1 ogr2ogr -update -append    -t_srs "EPSG:4326" -skipfailures -f "PostgreSQL" "PG:host=localhost user=luc dbname=potimart password=monalisa" db/iris/78/CARTO/IRIS78.MIF -lco GEOMETRY_NAME=the_geom -nln insee_iris iris78

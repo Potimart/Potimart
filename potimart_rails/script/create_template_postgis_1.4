@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+if [ "$USER" != "postgres" -o "$1" != "sudo" ]; then
+  exec sudo -u postgres $0 sudo
+fi
+
+createdb -E UTF8 template_postgis # Create the template spatial database.
+createlang -d template_postgis plpgsql # Adding PLPGSQL language support.
+psql -d template_postgis -f /usr/share/postgresql/8.4/contrib/postgis.sql
+psql -d template_postgis -f /usr/share/postgresql/8.4/contrib/spatial_ref_sys.sql
+cat <<EOS | psql -d template_postgis
+UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template_postgis';
+REVOKE ALL ON SCHEMA public FROM public;
+GRANT USAGE ON SCHEMA public TO public;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE public.geometry_columns TO PUBLIC;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE public.spatial_ref_sys TO PUBLIC;
+VACUUM FULL FREEZE;
+EOS

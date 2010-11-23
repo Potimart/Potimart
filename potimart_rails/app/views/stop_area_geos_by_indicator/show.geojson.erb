@@ -1,0 +1,10 @@
+{ "type": "FeatureCollection",
+  "features": [
+    <% @stop_area_geos.each do |stop_area_geo| %>
+    { "type": "Feature",
+      "geometry": <%= "#{stop_area_geo.the_geom.to_json}" %>,
+      "properties": {"Indicator": <%= stop_area_geo.stop_area_geo_indicator.by_name("#{params[:name]}").first.value %>}
+      },
+    <%end%>
+  ]
+}

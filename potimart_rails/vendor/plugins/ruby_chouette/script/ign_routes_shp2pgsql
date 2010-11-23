@@ -1,0 +1,2 @@
+#!/bin/sh
+shp2pgsql -s 27582 -D -S -W ISO-8859-15 -N skip BD_TOPO_ROUTES_LII.shp ign_routes > ign_routes.sql

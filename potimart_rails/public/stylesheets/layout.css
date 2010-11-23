@@ -1,0 +1,153 @@
+body
+{
+  padding: 0;
+  background-color:#eeeeee;
+  text-align: center;
+}
+
+#layout
+{
+  margin: auto;
+  text-align: left;
+  width: 1024px;
+  background-color: white;
+  border: 1px solid #999999;
+}
+
+/**********************************
+            Top Block
+***********************************/
+#top_block
+{
+  padding: 0;
+  width: 1024px;
+}
+
+#logo
+{
+  height: 150px;
+  background-image: url("/images/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  float: left;
+  width: 198px;
+}
+
+#project
+{
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  vertical-align: middle;
+  height: 150px;
+  float: left;
+  width: 819px;
+}
+
+/**********************************
+            Menu
+***********************************/
+/*#menu ul
+{
+  padding:0;
+  margin:0;
+  list-style-type:none;
+}
+
+#menu ul li
+{
+  float:left;
+  height: 32px;
+  width: 159px;
+  border: 1px solid #e7e7e7;
+  background-image: url("/images/menu_unselected.png");
+  background-repeat: repeat-x;
+  display:inline;
+  text-align:center;
+  padding:3px 5px 3px 5px;
+}
+#menu ul li a
+{
+  text-decoration:none;
+  font-weight: bold;
+  -moz-border-radius:4px 4px 4px 4px;
+  color:#666666;
+  font-size:12px;
+  text-shadow:1px 1px 0 rgba(255, 255, 255, 0.698);
+}
+
+#menu ul li a:hover
+{
+  color: black;
+}*/
+
+/* ^^^^^^^^ BELOW IS THE CODE FOR THE MENU ^^^^^^^^^^ */
+#menu
+{
+  position:relative;
+  display:block;
+  height:39px;
+  font-size:11px;
+  font-weight:bold;
+  background:transparent url("/images/bgOFF.gif") repeat-x top left;
+  font-family:Arial,Verdana,Helvitica,sans-serif;
+  border-top:4px solid black;
+}
+
+#menu ul
+{
+  margin:0;
+  padding:0;
+  list-style-type:none;
+  width:auto;
+}
+
+#menu ul li
+{
+  display:block;
+  float:left;
+  margin:0;
+}
+
+#menu ul li a
+{
+  display:block;
+  float:left;
+  color:#666;
+  text-decoration:none;
+  padding:11px 20px 0 20px;
+  height:23px;
+  background:transparent url("/images/bgDIVIDER.gif") no-repeat top right;
+}
+#menu ul li a:hover,#menu ul li a.current
+{
+  color:black;
+  background:#fff url("/images/bgON.gif") no-repeat top right;
+}
+
+
+/**********************************
+            Content
+***********************************/
+#content
+{
+  padding: 10px;
+}
+
+/**********************************
+            Footer
+***********************************/
+#footer
+{
+  text-align: left;
+  border-top: 1px solid #999999;
+  padding: 7px 0px 7px 10px;
+  height: 16px;
+  background: url("/images/footer.png") repeat-x;
+  text-decoration:none;
+  color:#666666;
+  font-size: 11px;
+  font-weight: bold;
+}

@@ -1,0 +1,7 @@
+<h1>Détails de l'arrêt <%= @stop_area_geo.name %></h1>
+
+<ul>
+<% @stop_area_geo.lines.each do |line|  %>
+  <li><%= link_to line.name, [@stop_area_geo, line] %></li>
+<% end %>
+</ul>

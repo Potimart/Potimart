@@ -1,0 +1,2 @@
+module StopAreaGeosByIndicatorHelper
+end

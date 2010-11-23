@@ -1,0 +1,7 @@
+<h1>Détails de la ligne <%= @line.name %></h1>
+
+<ul>
+<% @line.routes.each do |route|  %>
+  <li><%= link_to route.name, [@stop_area_geo, @line, route] %></li>
+<% end %>
+</ul>

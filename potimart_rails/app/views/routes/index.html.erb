@@ -1,0 +1,21 @@
+<h1>Séléction de l'itinéraire de la ligne <%=  @line.name %></h1>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Identifiant</th>
+    <th>Nom publié</th>
+    <th>Direction</th>
+    <th>Sélection</th>
+  </tr>
+
+<% @routes.each do |route| %>
+  <tr>
+    <td><%=h route.name %></td>
+    <td><%=h route.number %></td>
+    <td><%=h route.publishedname %></td>
+    <td><%=h route.direction %></td>
+    <td><%= link_to 'Sélectionner', line_route_stop_area_geos_path(@line, route) %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,7 @@
+<% form_for @request, :url => request_path do |f| %>
+    <%= f.error_messages %>
+    <%= f.label :body, 'Requête DSL :' %>:
+    <%= f.text_area :body %>
+    <%= f.submit 'exécuter' %>
+<% end %>
+

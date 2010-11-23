@@ -1,0 +1,57 @@
+set ON_ERROR_STOP=on;
+
+-- Adding PLPGSQL language support.
+create language plpgsql;
+
+<% postgis_scripts.each do |script| %>
+\i <%= script %>
+<% end %>
+
+-- REVOKE ALL ON SCHEMA public FROM public;
+-- GRANT USAGE ON SCHEMA public TO public;
+-- GRANT ALL ON SCHEMA public TO postgres;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE public.geometry_columns TO PUBLIC;
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE public.spatial_ref_sys TO PUBLIC;
+
+-- Create minimalist chouette schema
+
+CREATE SCHEMA chouette;
+GRANT ALL ON SCHEMA chouette TO PUBLIC;
+
+CREATE SEQUENCE chouette.line_seq
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+GRANT SELECT, UPDATE ON SEQUENCE chouette.line_seq TO PUBLIC;
+
+CREATE TABLE chouette.line (
+    ptnetworkid bigint,
+    companyid bigint,
+    objectid character varying(255),
+    objectversion bigint,
+    creationtime timestamp without time zone,
+    creatorid character varying(255),
+    name character varying(255),
+    number character varying(255),
+    publishedname character varying(255),
+    transportmodename character varying(255),
+    registrationnumber character varying(255),
+    comment character varying(255),
+    id bigint NOT NULL DEFAULT nextval('chouette.line_seq') PRIMARY KEY
+);
+GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE chouette.line TO PUBLIC;
+
+ALTER TABLE ONLY chouette.line
+    ADD CONSTRAINT line_objectid_key UNIQUE (objectid);
+ALTER TABLE ONLY chouette.line
+    ADD CONSTRAINT line_registrationnumber_key UNIQUE (registrationnumber);
+
+-- Create potimart schema
+
+CREATE SCHEMA potimart;
+GRANT ALL ON SCHEMA potimart TO PUBLIC;
+
+UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template_potimart';
+
+VACUUM FULL FREEZE;

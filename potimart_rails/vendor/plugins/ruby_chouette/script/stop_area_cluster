@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+
+$: << File.join(File.dirname(__FILE__), "lib")
+
+require 'ruby_chouette'
+
+class StopAreaCluster
+
+  attr_accessor :radius, :location, :name
+
+  def words
+    @words ||= name.to_words
+  end
+
+  def initialize
+    @radius = 1
+  end
+
+  def stop_area=(stop_area)
+    self.location = stop_area.to_lat_lng
+    self.name = stop_area.name
+  end
+
+  def distance(stop_area)
+    Chouette::Geocoder::WordSetMatcher.new(self.words, stop_area.name, :missing_input_penality => 0.1).score
+  end
+
+  def neighbours
+    StopArea.find_within radius, :origin => location
+  end
+
+  def scoring
+    neighbours.collect do |stop_area|
+      [ distance(stop_area), stop_area ]
+    end.delete_if do |score, stop_area|
+      score <= 0
+    end.sort_by do |score, stop_area|
+      -score
+    end
+  end
+
+end
+
+cluster = StopAreaCluster.new
+
+case ARGV.count
+when 2
+  cluster.name = ARGV.shift
+  cluster.location = GeoKit::LatLng.normalize(ARGV.shift)
+when 1
+  cluster.stop_area = StopArea.find(ARGV.shift)
+else
+  puts "Usage: stop_area_cluster <lat,lng> <name> or stop_area_cluster <stop_area_id>"
+  exit 
+end
+
+cluster.scoring.each do |score, stop_area|
+  puts [score, stop_area.name, stop_area.id, stop_area.to_lat_lng].join(' ')
+end

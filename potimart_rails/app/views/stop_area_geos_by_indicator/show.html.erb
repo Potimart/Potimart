@@ -1,0 +1,7 @@
+<h1>Détails des tronçons</h1>
+
+<ul>
+<% @stop_area_geos.each do |stop_area_geo|  %>
+  <li><%=h stop_area_geo.name  %></li>
+<% end %>
+</ul>

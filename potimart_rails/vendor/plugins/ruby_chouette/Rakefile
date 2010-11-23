@@ -1,0 +1,13 @@
+$:.unshift File.join( File.dirname(__FILE__), "lib") 
+%w[rubygems rake rake/clean].each { |f| require f }
+
+# load internal rake tasks
+Dir[File.join( File.dirname(__FILE__), "tasks.internal", "*.rake") ].each { |t| load t }
+# load public rake tasks
+Dir[File.join( File.dirname(__FILE__), "lib", "tasks", "*.rake") ].each { |t| load t }
+
+task :default => :migrate
+
+task :"db:test:prepare" do
+
+end

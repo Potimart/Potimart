@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+$: << "#{File.dirname(__FILE__)}/../lib"
+
+require 'ruby_chouette'
+require 'chouette/geocoder'
+
+include Chouette::Geocoder
+
+class MatcherScoreBenchmark
+
+  def prepare
+    @matcher = WordSetMatcher.new("cour jacques albert", "rue jacques courage", "pontoise")
+  end
+
+  def execute
+    @matcher.dup.score
+  end
+
+end
+
+def run_benchmark(name)
+  benchmark = Object.const_get("#{name.camelize}Benchmark").new
+
+  puts "Prepare #{name} ..."
+  benchmark.prepare
+  
+  puts "Execute #{name} ..."
+  puts Benchmark.measure {
+    100000.times do
+      benchmark.execute
+    end
+  }
+end
+
+until ARGV.empty?
+  run_benchmark ARGV.shift
+end

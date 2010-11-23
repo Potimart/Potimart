@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start_point: 1
+  end_point: 1
+
+two:
+  start_point: 1
+  end_point: 1

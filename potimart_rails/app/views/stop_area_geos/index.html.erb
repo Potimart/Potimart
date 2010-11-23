@@ -1,0 +1,21 @@
+<h1>Sélection de l'arrêt</h1>
+<h2>Ligne : <%= @line.name %></h2>
+<h2>Itinéraire : <%= @route.name %></h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Indicateurs</th>
+  </tr>
+
+  
+  <% @stoparea_geos.each do |stoparea_geo| %>
+    <tr>
+      <td><%=h stoparea_geo.id %></td>
+      <td><%=h stoparea_geo.name %></td>
+
+      <td><%= link_to "Editer",  line_route_stop_area_geo_stop_area_geo_indicators_path(@line, @route, stoparea_geo) %></td>
+    </tr>
+  <% end %>
+</table>

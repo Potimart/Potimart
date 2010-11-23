@@ -1,0 +1,5 @@
+Only include in this directory "public" rake tasks which can be 
+used by external projects.
+
+Use /lib/tasks/ for internel rake tasks.
+

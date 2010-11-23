@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  database: potimart
+  username: chouette
+  schema_search_path: potimart, chouette, public
+  template: template_1
+  
+test:
+  adapter: postgresql
+  database: potimart_test
+  username: chouette
+  schema_search_path: potimart, chouette, public
+  template: template_1

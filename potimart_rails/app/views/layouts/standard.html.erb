@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <%= stylesheet_link_tag "potimart" %>
+    <title>Potimart</title>
+  </head>
+  <body id="large">
+    <div id="layout">
+      <div class="spacer"></div>
+      <div id="top_block">
+        <div id="logo"></div>
+        <div id="project">Potimart phase 3</div>
+      </div>
+      <div class="spacer"></div>
+      <div id="menu">
+        <ul>
+          <li><%= link_to "INDICATEURS DE LIGNE ET ARRETS", :controller => "lines", :action => "index" %></li>
+          <li><%= link_to "INDICATEURS DE COMMUNE (Non disponibles sur ce réseau)", :controller => "insee_communes", :action => "index" %></li>
+        </ul>
+      </div>
+      <div class="spacer"></div>
+      <div id="content">
+        <%= yield :layout %>
+      </div>
+      <div class="spacer"></div>
+      <div id="footer">Copyright @2010</div>
+    </div>
+  </body>
+</html>
+

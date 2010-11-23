@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start_point: 1
+  end_point: 1
+  departure_time: 2009-12-01 15:34:50
+  arrival_time: 2009-12-01 15:34:50
+  duration: 2009-12-01 15:34:50
+  step_type: MyString
+  network_id: 1
+  line_id: 1
+
+two:
+  start_point: 1
+  end_point: 1
+  departure_time: 2009-12-01 15:34:50
+  arrival_time: 2009-12-01 15:34:50
+  duration: 2009-12-01 15:34:50
+  step_type: MyString
+  network_id: 1
+  line_id: 1

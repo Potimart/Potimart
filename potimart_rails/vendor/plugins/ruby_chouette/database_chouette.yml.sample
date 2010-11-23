@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: chouette
+  username: agilis
+  password: agilis0
+  
+test:
+  adapter: postgresql
+  database: chouette_test
+  username: agilis
+  password: agilis0

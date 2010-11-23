@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"
+     xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <% @stop_area_geos.each do |stop_area_geo| %>
+      <Placemark>
+        <name><%= stop_area_geo.name %></name>
+        <description>
+          <![CDATA[
+          <%= stop_area_geo.stop_area_geo_indicator.by_name("#{params[:name]}").first.value %>
+          ]]>
+        </description>
+        <!-- QGis don't read extended data, perhaps use this later -->
+        <ExtendedData>
+          <Data name="<%= stop_area_geo.stop_area_geo_indicator.by_name("#{params[:name]}").first.name%>">
+            <value><%= stop_area_geo.stop_area_geo_indicator.by_name("#{params[:name]}").first.value %></value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates><%= "#{stop_area_geo.the_geom.lng},#{stop_area_geo.the_geom.lat}"%></coordinates>
+        </Point>
+      </Placemark>
+    <% end %>
+  </Document>
+</kml>

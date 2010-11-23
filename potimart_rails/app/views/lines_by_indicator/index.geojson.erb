@@ -1,0 +1,10 @@
+{ "type": "FeatureCollection",
+  "features": [
+    <% @service_links.each do |service_link| %>
+    { "type": "Feature",
+      "geometry": <%= "#{service_link.the_geom.to_json}" %>,
+      "properties": {"Indicator": <%=  service_link.line.line_indicators.by_name("#{params[:name]}").first.value %> }
+      },
+    <%end%>
+  ]
+}

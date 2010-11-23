@@ -1,0 +1,45 @@
+.spacer {
+  clear: both;
+}
+
+h1
+{
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 0px 10px 0px;
+}
+
+h2
+{
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 0px 0px 0px;
+}
+
+fieldset{
+  border: 1px solid orange;
+}
+
+legend{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+p
+{
+  padding: 10px 10px 10px 10px;
+}
+
+table
+{
+  margin: auto;
+}
+
+td, th
+{
+  border: 1px solid black;
+  padding: 3px 5px 3px 5px;
+  text-align: center;
+}
+
+

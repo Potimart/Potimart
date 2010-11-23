@@ -1,0 +1,25 @@
+<h1>Indicateur de la  ligne <%= @line.name %></h1>
+
+<% form_for([@line, @line_indicator]) do |f| %>
+  <p>
+    <%= f.label :name, 'Nom' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :value, 'Valeur' %><br />
+    <%= f.text_field :value %>
+  </p>
+  <p>
+    <%= f.label :start_date, 'Date de début' %><br />
+    <%= f.date_select :start_date, :order =>[:day, :month, :year] %>
+  </p>
+  <p>
+    <%= f.label :end_date, 'Date de fin' %><br />
+    <%= f.date_select :end_date, :order =>[:day, :month, :year] %>
+  </p>
+  <p>
+    <%= f.submit 'Modifier' %>
+  </p>
+<% end %>
+
+<%= link_to 'Retour', line_line_indicators_path %>

@@ -1,0 +1,25 @@
+<h1>Edition des indicateurs des arrêts</h1>
+<h2>Ligne : <%= @line.name %></h2>
+<h2>Itinéraire : <%= @route.name %></h2>
+<h2>Arrêt : <%= @stop_area_geo.name %></h2>
+
+<%= link_to 'Ajouter un indicateur', new_line_route_stop_area_geo_stop_area_geo_indicator_path(@line, @route, @stop_area_geo) %>
+
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Valeur</th>
+    <th>Edition</th>
+    <th>Suppression</th>
+  </tr>
+
+
+  <% @stop_area_geo_indicators.each do |stop_area_geo_indicator| %>
+    <tr>
+      <td><%=h stop_area_geo_indicator.name %></td>
+      <td><%=h stop_area_geo_indicator.value %></td>
+      <td><%= link_to 'Editer', edit_line_route_stop_area_geo_stop_area_geo_indicator_path(@line, @route, @stop_area_geo, stop_area_geo_indicator) %></td>
+      <td><%= link_to 'Supprimer', line_route_stop_area_geo_stop_area_geo_indicator_path(@line, @route, @stop_area_geo, stop_area_geo_indicator), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

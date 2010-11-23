@@ -1,0 +1,49 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require(File.join(File.dirname(__FILE__), 'config', 'boot'))
+
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+require 'tasks/rails'
+
+namespace "db:template" do
+  desc "Create the template_potimart postgresql template"
+  task :create => :file do
+    unless system "sudo -u postgres psql --no-align -l | grep -q '^template_potimart|'"
+      as_postgres "createdb -E UTF8 template_potimart"
+      as_postgres "psql template_potimart < db/template-potimart.sql > /dev/null"
+    else
+      puts "Template template_potimart already exists"
+    end
+  end
+
+  desc "Drop the template_potimart postgresql template"
+  task :drop do
+    if system "sudo -u postgres psql --no-align -l | grep -q '^template_potimart|'"
+      as_postgres "psql -c \"UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template_potimart';\""
+      as_postgres "dropdb template_potimart"
+    end
+  end
+
+  desc "Create the template_potimart definition (in db/template-potimart.sql)"
+  task :file do
+    File.open("db/template-potimart.sql","w") do |f|
+      f.write ERB.new(IO.read("db/template-potimart.sql.erb")).result(binding)
+    end
+  end
+
+  def as_postgres(command)
+    sh "sudo -u postgres #{command}"
+  end
+
+  def postgis_scripts
+    [ %w{/usr/share/postgresql-8.3-postgis/lwpostgis.sql /usr/share/postgresql-8.3-postgis/spatial_ref_sys.sql},
+      %w{/usr/share/postgresql/8.4/contrib/postgis.sql /usr/share/postgresql/8.4/contrib/spatial_ref_sys.sql},
+      %w{/usr/share/postgresql/8.4/contrib/postgis-1.5/postgis.sql /usr/share/postgresql/8.4/contrib/postgis-1.5/spatial_ref_sys.sql}
+    ].find { |scripts| scripts.all? { |script| File.exists?(script) } }
+  end
+end
+

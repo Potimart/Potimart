@@ -1,0 +1,18 @@
+<h1>Détails de l'itinéraire <%= @route.name %></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Fréquentation</th>
+    <th>Validation</th>
+  </tr>
+  <% form_tag @route  %>
+  <% @route.stoparea_geos.each do |stoparea_geo|  %>
+    <tr>
+      <td><%=h stoparea_geo.name %></td>
+      <td><%=form.textfield stoparea_geo.frequenting %></td>
+      <td><%=form.textfield stoparea_geo.validation %></td>
+    </tr>
+  <%end%>
+<%end%>
+</table>

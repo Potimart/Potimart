@@ -1,0 +1,3 @@
+#!/bin/sh
+
+irb -r lib/ruby_chouette.rb -r lib/chouette/geocoder.rb

@@ -1,0 +1,7 @@
+log/*
+*~
+nbproject/*
+*~
+.bundle/
+dist/
+db/template-potimart.sql
