@@ -17,11 +17,11 @@ Une vision communautaire
 - Communication internationale
 
 Pour quels utilisateurs ?
-- Réseaux de transport (saisie, validation, cartographie, analyses de base…)
-- Institutions (publications de données normalisées, cartographies multi réseaux…)
-- Bureaux d’étude, agences d’urbanisme (cartographies, analyses avancées…)
-- Développeurs (validation d’algorithmes…)
-- Grand public (information voyageur multimodale, guidage piéton/TC…)
+- Réseaux de transport (saisie, validation, cartographie, analyses de base ...)
+- Institutions (publications de données normalisées, cartographies multi réseaux...)
+- Bureaux d’étude, agences d’urbanisme (cartographies, analyses avancées...)
+- Développeurs (validation d’algorithmes...)
+- Grand public (information voyageur multimodale, guidage piéton/TC...)
 
 Les ambitions de ce projet soutenu par la PREDIM sont de développer une suite logicielle sous licence Open Source composée de :
 
