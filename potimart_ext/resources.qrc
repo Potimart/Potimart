@@ -1,0 +1,6 @@
+<RCC> 
+  <qresource prefix="/plugins/potimartmaps" > 
+    <file>map.png</file> 
+  </qresource> 
+</RCC> 
+
