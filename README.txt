@@ -30,3 +30,27 @@ Les ambitions de ce projet soutenu par la PREDIM sont de développer une suite l
 => Modules d’analyse : calcul d'itinéraires TC, VP dans un premier temps, puis à terme de fonctions plus évoluées (accessibilité, etc.)
 
 => Interfaces (bureautique et internet) Système d’Information géographique (SIG) : pour la visualisation des analyses (itinéraires) et des réseaux de transport modélisés  
+
+
+====================
+CONTENU DE LA FORGE 
+====================
+
+- un serveur RAILS qui doit être connecté à une base de données PostGIS, il permet de :
+	=> visualiser les données du réseau via une interface web;
+	=> créer ou mettre à jour des indicateurs sur les lignes ou les arrêts.
+	
+- une extension Python pour QGIS, elle permet de :
+	=> visusaliser un réseau de transport (lignes et missions);
+	=> calculer et visualiser des indicateurs sur les lignes ou les arrêts;
+	=> vérifier les connexions avec les serveurs RAILS et PostGIS.
+
+- des données de Test :
+	=> le réseau Tatrobus : un réseau simple d'une dizaine de lignes;
+	=> le réseau de bus Tisséo de Toulouse : un réseau complet de 90 lignes, plus de 3000 arrêts. A noter que l'usage des données Tisséo est limité à ce démonstrateur.
+
+- des scripts sql pour la création de la base de données PostGIS et pour le calcul d'indicateurs.
+
+- documentation :
+	=> utilisation, installation et architecture du projet proposé;
+	=> comment récupérer et installer la machine virtuelle Ubuntu du projet.
