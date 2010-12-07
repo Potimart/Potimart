@@ -47,7 +47,7 @@ CONTENU DE LA FORGE
 
 - des données de Test :
 	=> le réseau Tatrobus : un réseau simple d'une dizaine de lignes;
-	=> le réseau de bus Tisséo de Toulouse : un réseau complet de 90 lignes, plus de 3000 arrêts. A noter que l'usage des données Tisséo est limité à ce démonstrateur.
+	=> le réseau de bus de Toulouse : nous tenons tout particulièrement à remercier la société Tisséo qui nous a aimablement mis à disposition les données de son réseau (90 lignes, plus de 3000 arrêts). A noter cependant que ces données ne doivent être utilisées que dans le cadre de ce démonstrateur, aucune autre utilisation n'est autorisée.
 
 - des scripts sql pour la création de la base de données PostGIS et pour le calcul d'indicateurs.
 
