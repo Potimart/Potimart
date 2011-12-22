@@ -1,0 +1,248 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Action Controller: Exception caught</title>
+  <style>
+    body { background-color: #fff; color: #333; }
+
+    body, p, ol, ul, td {
+      font-family: verdana, arial, helvetica, sans-serif;
+      font-size:   13px;
+      line-height: 18px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      font-size: 11px;
+    }
+
+    a { color: #000; }
+    a:visited { color: #666; }
+    a:hover { color: #fff; background-color:#000; }
+  </style>
+</head>
+<body>
+
+<h1>
+  NoMethodError
+  
+    in Stop area geos by indicatorController#show
+  
+</h1>
+<pre>You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]</pre>
+
+
+
+<p><code>RAILS_ROOT: C:/potimart2011/potimart_rails</code></p>
+
+<div id="traces">
+  
+    
+    <a href="#" onclick="document.getElementById('Framework-Trace').style.display='none';document.getElementById('Full-Trace').style.display='none';document.getElementById('Application-Trace').style.display='block';; return false;">Application Trace</a> |
+  
+    
+    <a href="#" onclick="document.getElementById('Application-Trace').style.display='none';document.getElementById('Full-Trace').style.display='none';document.getElementById('Framework-Trace').style.display='block';; return false;">Framework Trace</a> |
+  
+    
+    <a href="#" onclick="document.getElementById('Application-Trace').style.display='none';document.getElementById('Framework-Trace').style.display='none';document.getElementById('Full-Trace').style.display='block';; return false;">Full Trace</a> 
+  
+
+  
+    <div id="Application-Trace" style="display: block;">
+      <pre><code>C:/potimart2011/potimart_rails/vendor/plugins/postgis_adapter/lib/postgis_adapter.rb:239:in `columns'
+C:/potimart2011/potimart_rails/vendor/plugins/postgis_adapter/lib/postgis_adapter.rb:237:in `collect'
+C:/potimart2011/potimart_rails/vendor/plugins/postgis_adapter/lib/postgis_adapter.rb:237:in `columns'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1301:in `columns'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1314:in `column_names'
+C:1:in `__send__'
+C:1:in `column_names'
+C:/potimart2011/potimart_rails/app/models/stop_area_geo.rb:54:in `by_indicator_name'
+C:/potimart2011/potimart_rails/app/controllers/stop_area_geos_by_indicator_controller.rb:7:in `show'</code></pre>
+    </div>
+  
+    <div id="Framework-Trace" style="display: none;">
+      <pre><code>C:/potimart2011/potimart_rails/vendor/plugins/postgis_adapter/lib/postgis_adapter.rb:239:in `columns'
+C:/potimart2011/potimart_rails/vendor/plugins/postgis_adapter/lib/postgis_adapter.rb:237:in `collect'
+C:/potimart2011/potimart_rails/vendor/plugins/postgis_adapter/lib/postgis_adapter.rb:237:in `columns'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1301:in `columns'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1314:in `column_names'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:2014:in `column_names_with_alias'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1789:in `column_aliases'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1789:in `collect'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1789:in `column_aliases'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1630:in `construct_finder_sql_with_included_associations'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1623:in `select_all_rows'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1401:in `find_with_associations'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1399:in `catch'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1399:in `find_with_associations'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1576:in `find_every'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:618:in `find'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby187/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3</code></pre>
+    </div>
+  
+    <div id="Full-Trace" style="display: none;">
+      <pre><code>C:/potimart2011/potimart_rails/vendor/plugins/postgis_adapter/lib/postgis_adapter.rb:239:in `columns'
+C:/potimart2011/potimart_rails/vendor/plugins/postgis_adapter/lib/postgis_adapter.rb:237:in `collect'
+C:/potimart2011/potimart_rails/vendor/plugins/postgis_adapter/lib/postgis_adapter.rb:237:in `columns'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1301:in `columns'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1314:in `column_names'
+C:1:in `__send__'
+C:1:in `column_names'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:2014:in `column_names_with_alias'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1789:in `column_aliases'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1789:in `collect'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1789:in `column_aliases'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1630:in `construct_finder_sql_with_included_associations'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1623:in `select_all_rows'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1401:in `find_with_associations'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1399:in `catch'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/associations.rb:1399:in `find_with_associations'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:1576:in `find_every'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/base.rb:618:in `find'
+C:/potimart2011/potimart_rails/app/models/stop_area_geo.rb:54:in `by_indicator_name'
+C:/potimart2011/potimart_rails/app/controllers/stop_area_geos_by_indicator_controller.rb:7:in `show'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `send'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby187/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+C:/Users/cboitel/.bundle/ruby/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+script/server:3:in `require'
+script/server:3</code></pre>
+    </div>
+  
+</div>
+
+
+
+
+
+
+<h2 style="margin-top: 30px">Request</h2>
+<p><b>Parameters</b>: <pre>{&quot;name&quot;=&gt;&quot;Dessertes_du_11-12-2012_entre_05:00:00_et_07:00:00&quot;,
+ &quot;format&quot;=&gt;&quot;geojson&quot;}</pre></p>
+
+<p><a href="#" onclick="document.getElementById('session_dump').style.display='block'; return false;">Show session dump</a></p>
+<div id="session_dump" style="display:none"><pre class='debug_dump'>--- 
+</pre></div>
+
+
+<h2 style="margin-top: 30px">Response</h2>
+<p><b>Headers</b>: <pre>{&quot;Content-Type&quot;=&gt;&quot;&quot;,
+ &quot;Cache-Control&quot;=&gt;&quot;no-cache&quot;}</pre></p>
+
+
+
+</body>
+</html>
